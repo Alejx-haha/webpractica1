@@ -1,0 +1,92 @@
+/* Fondo general */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Título */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Formulario */
+form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  display: grid;
+  gap: 10px;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botones */
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Botón crear */
+button[type="submit"] {
+  background: #4CAF50;
+  color: white;
+}
+
+/* Botón cancelar */
+button[type="button"] {
+  background: #999;
+  color: white;
+}
+
+/* Lista de productos */
+.product {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Imagen */
+.product img {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Botones dentro del producto */
+.product button {
+  margin-right: 10px;
+}
+
+/* Botón editar */
+.product button:first-of-type {
+  background: #2196F3;
+  color: white;
+}
+
+/* Botón eliminar */
+.product button:last-of-type {
+  background: #f44336;
+  color: white;
+}
