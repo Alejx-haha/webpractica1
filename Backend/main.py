@@ -1,7 +1,9 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import SQLModel, Field, create_engine, Session, select
 from typing import Optional, List
+import os
+from dotenv import load_dotenv
 
 # =====================
 # CONFIG
@@ -17,10 +19,13 @@ app.add_middleware(
 )
 
 # =====================
-# DATABASE (SQLite local)
+# DATABASE (RDS PostgreSQL)
 # =====================
-DATABASE_URL = "sqlite:///./ecommerce.db"
-engine = create_engine(DATABASE_URL, echo=True)
+load_dotenv()
+
+DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+
+engine = create_engine(DATABASE_URL, echo=True, pool_pre_ping=True)
 
 
 def create_db():
